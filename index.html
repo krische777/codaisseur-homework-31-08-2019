@@ -1,4 +1,4 @@
-<html>
+ <html>
 <head>
     <meta charset="utf-8">
     <title>Mocha Tests</title>
@@ -9,6 +9,22 @@
 <img id="inn" onclick={hero.health=10}>
 <img id="dagger" onclick="addDagger()">
 <img id="bag" onclick="equipWeapon(hero)">
+
+<form onsubmit="submitName(event)">
+<label for="inputName">Input your hero's name:</label>
+<input type="text" id='inputName'>
+<input type="submit" value="Submit">
+</form>
+
+<ul>
+  <li id="heroName"></li>
+  <li id="heroHealth"></li>
+  <li id="heroWeaponType"></li>
+  <li id="heroWeaponDamage"></li>
+</ul>
+
+
+
   <!-- 👍 YOUR HTML HERE 👍 -->
 
 

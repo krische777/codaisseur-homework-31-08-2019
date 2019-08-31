@@ -34,6 +34,29 @@ function addDagger () {
     hero.inventory.push(hero.weapon)
 }
 
+
+function submitName(event) {
+    event.preventDefault()
+    const inputName=document.getElementById('inputName')
+    hero.name=inputName.value
+    displayStats()
+
+}
+
 function displayStats() {
+
+    document.getElementById('heroName').innerHTML= "Name: " +hero.name
+    document.getElementById('heroHealth').innerHTML="Health: " +hero.health
+    document.getElementById('heroWeaponType').innerHTML="Weapon type: " +hero.weapon.type
+    document.getElementById('heroWeaponDamage').innerHTML="Weapon Damage: " +hero.weapon.damage
+}
+
+function fightingEnemy() {
     
 }
+
+displayStats()
+
+
+
+
