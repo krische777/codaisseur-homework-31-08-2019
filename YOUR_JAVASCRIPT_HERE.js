@@ -16,7 +16,7 @@ function rest(hero) {
         hero.health = 10;
     }
 
-  
+
     return hero;
 }
 
@@ -29,36 +29,53 @@ function equipWeapon(hero) {
     }
 }
 
-function addDagger () {
-    hero.weapon={type:'dagger', damage:2}
+function addDagger() {
+    hero.weapon = { type: 'dagger', damage: 2 }
     hero.inventory.push(hero.weapon)
 }
 
 
 function submitName(event) {
     event.preventDefault()
-    const inputName=document.getElementById('inputName')
-    hero.name=inputName.value
+    const inputName = document.getElementById('inputName')
+    hero.name = inputName.value
     displayStats()
 
 }
 
 function displayStats() {
 
-    document.getElementById('heroName').innerHTML= "Name: " +hero.name
-    document.getElementById('heroHealth').innerHTML="Health: " +hero.health
-    document.getElementById('heroWeaponType').innerHTML="Weapon type: " +hero.weapon.type
-    document.getElementById('heroWeaponDamage').innerHTML="Weapon Damage: " +hero.weapon.damage
+    document.getElementById('heroName').innerHTML = "Name: " + hero.name
+    document.getElementById('heroHealth').innerHTML = "Health: " + hero.health
+    document.getElementById('heroWeaponType').innerHTML = "Weapon type: " + hero.weapon.type
+    document.getElementById('heroWeaponDamage').innerHTML = "Weapon Damage: " + hero.weapon.damage
 }
-let kills=0
-function fightEnemy(event) { 
-      event.preventDefault()
-      kills+=1
-      document.getElementById('p').innerHTML="Kills: " +kills
-      document.getElementById('enemy').parentNode.removeChild(document.getElementById('enemy'))
+let kills = 0
+function killEnemy(event) {
+    event.preventDefault()
+    let tgt = event.target;
+    kills += 1
+    document.getElementById('p').innerHTML = "Kills: " + kills
+    tgt.parentNode.parentNode.removeChild(tgt.parentNode)
 }
 
 
+
+
+function fightEnemy(event) {
+    event.preventDefault()
+    let tgt = event.target;
+    let enemyHealth = tgt.parentNode.getAttribute('health')
+    
+    if (enemyHealth - hero.weapon.damage <= 0) {
+        killEnemy(event)
+    }
+    else {
+        enemyHealth -= hero.weapon.damage
+        tgt.parentNode.setAttribute('health', enemyHealth)
+        tgt.parentNode.getElementsByTagName('p')[0].innerHTML = enemyHealth;
+    }
+}
 displayStats()
 
 

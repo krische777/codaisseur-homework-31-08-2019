@@ -1,35 +1,55 @@
- <html>
+<html>
+
 <head>
-    <meta charset="utf-8">
-    <title>Mocha Tests</title>
-    <link href="lib/mocha.css" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="./styles.css">
+  <meta charset="utf-8">
+  <title>Mocha Tests</title>
+  <link href="lib/mocha.css" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="./styles.css">
 
 </head>
+
 <body>
- 
-<img id="inn" onclick={hero.health=10}>
-<img id="dagger" onclick="addDagger()">
-<img id="bag" onclick="equipWeapon(hero)">
 
-<form onsubmit="submitName(event)">
-<label for="inputName">Input your hero's name:</label>
-<input type="text" id='inputName'>
-<input type="submit" value="Submit">
-</form>
+  <img id="inn" onclick={hero.health=10}>
+  <img id="dagger" onclick="addDagger()">
+  <img id="bag" onclick="equipWeapon(hero)">
 
-<ul>
-  <li id="heroName"></li>
-  <li id="heroHealth"></li>
-  <li id="heroWeaponType"></li>
-  <li id="heroWeaponDamage"></li>
-</ul>
+  <form onsubmit="submitName(event)">
+    <label for="inputName">Input your hero's name:</label>
+    <input type="text" id='inputName'>
+    <input type="submit" value="Submit">
+  </form>
 
-<p id="p"></p>
-<img src="./download.jpeg" id="enemy" onclick="fightEnemy(event)">
-<img src="./download.jpeg" id="enemy" onclick="fightEnemy(event)">
-<img src="./download.jpeg" id="enemy" onclick="fightEnemy(event)">
-<img src="./download.jpeg" id="enemy" onclick="fightEnemy(event)">
+  <ul>
+    <li id="heroName"></li>
+    <li id="heroHealth"></li>
+    <li id="heroWeaponType"></li>
+    <li id="heroWeaponDamage"></li>
+  </ul>
+
+  <p id="p"></p>
+  <div style="border:1px solid black;" health="10">
+    <p>10</p>
+    <button onclick="fightEnemy(event)">Fight Enemy</button>
+    <img src="./download.jpeg" onclick="killEnemy(event)">
+  </div>
+  <div style="border:1px solid black;" health="10">
+    <p>10</p>
+    <button onclick="fightEnemy(event)">Fight Enemy</button>
+    <img src="./download.jpeg" onclick="killEnemy(event)">
+  </div>
+
+  <div style="border:1px solid black;" health="10">
+    <p>10</p>
+    <button onclick="fightEnemy(event)">Fight Enemy</button>
+    <img src="./download.jpeg" onclick="killEnemy(event)">
+  </div>
+
+  <div style="border:1px solid black;" health="10">
+    <p>10</p>
+    <button onclick="fightEnemy(event)">Fight Enemy</button>
+    <img src="./download.jpeg" onclick="killEnemy(event)">
+  </div>
 
 
 
@@ -42,7 +62,7 @@
   <button onclick="mocha.checkLeaks(); mocha.run();">Run the tests!</button>
 
   <div id="mocha">
-  <!-- MOCHA TEST FEEDBACK WILL BE RENDERED HERE -->
+    <!-- MOCHA TEST FEEDBACK WILL BE RENDERED HERE -->
   </div>
 
   <script src="lib/chai.js"></script>
@@ -53,4 +73,5 @@
   <script src="lib/game_logic.test.js"></script>
 
 </body>
+
 </html>
