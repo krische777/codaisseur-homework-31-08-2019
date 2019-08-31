@@ -50,10 +50,14 @@ function displayStats() {
     document.getElementById('heroWeaponType').innerHTML="Weapon type: " +hero.weapon.type
     document.getElementById('heroWeaponDamage').innerHTML="Weapon Damage: " +hero.weapon.damage
 }
-
-function fightingEnemy() {
-    
+let kills=0
+function fightEnemy(event) { 
+      event.preventDefault()
+      kills+=1
+      document.getElementById('p').innerHTML="Kills: " +kills
+      document.getElementById('enemy').parentNode.removeChild(document.getElementById('enemy'))
 }
+
 
 displayStats()
 
